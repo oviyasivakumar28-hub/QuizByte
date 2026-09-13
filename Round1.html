@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Byte - Round 1</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f0ff;
+        }
+
+        /* HEADER */
+
+        .header {
+            background: #6c4ab6;
+            color: white;
+            padding: 18px 30px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h2 {
+            margin: 0;
+        }
+
+        /* TIMER */
+
+        .timer {
+            background: white;
+            color: #6c4ab6;
+
+            padding: 10px 20px;
+            border-radius: 10px;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* MAIN */
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+
+            margin: 30px auto;
+        }
+
+        /* WELCOME */
+
+        .welcome {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            margin-bottom: 25px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .welcome h1 {
+            color: #6c4ab6;
+            margin-top: 0;
+        }
+
+        /* QUESTION CARD */
+
+        .question-card {
+            background: white;
+
+            padding: 22px;
+
+            margin-bottom: 20px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .question {
+            font-size: 18px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+
+            color: #333;
+        }
+
+        /* OPTIONS */
+
+        .option {
+            display: block;
+
+            background: #f5f2ff;
+
+            padding: 13px;
+
+            margin: 8px 0;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+        }
+
+        .option:hover {
+            background: #e6ddff;
+        }
+
+        .option input {
+            margin-right: 10px;
+        }
+
+        /* SUBMIT */
+
+        .submit-btn {
+            width: 100%;
+
+            padding: 16px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #6c4ab6;
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin: 20px 0 50px;
+        }
+
+        .submit-btn:hover {
+            background: #50358e;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <h2>🧠 QUIZ BYTE</h2>
+
+    <div class="timer">
+
+        ⏱️ <span id="timer">30:00</span>
+
+    </div>
+
+</div>
+
+
+
+<!-- MAIN CONTAINER -->
+
+<div class="container">
+
+
+    <!-- WELCOME -->
+
+    <div class="welcome">
+
+        <h1>ROUND 1</h1>
+
+        <p>
+            Welcome,
+            <b>{{ name }}</b>
+        </p>
+
+        <p>
+            <b>30 Questions | 30 Minutes</b>
+        </p>
+
+        <p>
+            Select the correct answer for each question.
+        </p>
+
+    </div>
+
+
+
+    <!-- QUIZ FORM -->
+
+    <form
+        id="quizForm"
+        action="/submit_round1"
+        method="POST"
+    >
+
+
+
+        <!-- QUESTION 1 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                1. What does CPU stand for?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q1" value="0">
+                Central Processing Unit
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="1">
+                Computer Processing Utility
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="2">
+                Central Program Unit
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="3">
+                Control Processing Unit
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 2 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                2. Which language is used to structure a web page?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q2" value="0">
+                Python
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="1">
+                HTML
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="2">
+                SQL
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="3">
+                Java
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 3 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                3. Which data structure follows FIFO?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q3" value="0">
+                Stack
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="1">
+                Queue
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="2">
+                Tree
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="3">
+                Graph
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 4 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                4. Which data structure follows LIFO?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q4" value="0">
+                Queue
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="1">
+                Array
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="2">
+                Stack
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="3">
+                Linked List
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 5 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                5. Which of the following is NOT an operating system?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q5" value="0">
+                Linux
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="1">
+                Windows
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="2">
+                Oracle
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="3">
+                Android
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 6 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                6. What is the full form of RAM?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q6" value="0">
+                Random Access Memory
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="1">
+                Read Access Memory
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="2">
+                Rapid Access Module
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="3">
+                Random Application Memory
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 7 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                7. Which SQL command is used to retrieve data?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q7" value="0">
+                INSERT
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="1">
+                UPDATE
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="2">
+                SELECT
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="3">
+                DELETE
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 8 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                8. Which symbol is used for comments in Python?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q8" value="0">
+                //
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="1">
+                #
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="2">
+                &lt;!-- --&gt;
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="3">
+                /* */
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 9 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                9. Which one is a Python data type?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q9" value="0">
+                Integer
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="1">
+                Float
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="2">
+                String
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="3">
+                All of the above
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 10 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                10. Which protocol is mainly used to access web pages?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q10" value="0">
+                FTP
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="1">
+                HTTP
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="2">
+                SMTP
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="3">
+                POP3
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 11 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                11. What does DBMS stand for?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q11" value="0">
+                Database Management System
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q11" value="1">
+                Data Backup Management System
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q11" value="2">
+                Database Monitoring Service
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q11" value="3">
+                Data Management Software
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 12 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                12. Which key uniquely identifies a record in a database table?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q12" value="0">
+                Foreign Key
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q12" value="1">
+                Primary Key
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q12" value="2">
+                Candidate Value
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q12" value="3">
+                Composite Value
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 13 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                13. Which HTML tag is used to create a hyperlink?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q13" value="0">
+                &lt;p&gt;
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q13" value="1">
+                &lt;link&gt;
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q13" value="2">
+                &lt;a&gt;
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q13" value="3">
+                &lt;href&gt;
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 14 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                14. Which CSS property is used to change text color?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q14" value="0">
+                font-color
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q14" value="1">
+                text-color
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q14" value="2">
+                color
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q14" value="3">
+                text-style
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 15 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                15. Which language is mainly used to add interactivity to web pages?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q15" value="0">
+                HTML
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q15" value="1">
+                CSS
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q15" value="2">
+                JavaScript
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q15" value="3">
+                SQL
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 16 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                16. What is the brain of a computer?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q16" value="0">
+                RAM
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q16" value="1">
+                CPU
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q16" value="2">
+                Hard Disk
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q16" value="3">
+                Monitor
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 17 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                17. Which of these is an input device?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q17" value="0">
+                Monitor
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q17" value="1">
+                Printer
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q17" value="2">
+                Keyboard
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q17" value="3">
+                Speaker
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 18 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                18. Which network device forwards data between different networks?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q18" value="0">
+                Switch
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q18" value="1">
+                Router
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q18" value="2">
+                Hub
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q18" value="3">
+                Repeater
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 19 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                19. What does IP stand for?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q19" value="0">
+                Internet Protocol
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q19" value="1">
+                Internal Program
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q19" value="2">
+                Internet Process
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q19" value="3">
+                Information Protocol
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 20 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                20. Which is an example of an AI application?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q20" value="0">
+                Face Recognition
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q20" value="1">
+                Calculator
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q20" value="2">
+                Keyboard
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q20" value="3">
+                Monitor
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 21 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                21. Which algorithm is commonly used for sorting?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q21" value="0">
+                Bubble Sort
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q21" value="1">
+                Binary Search
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q21" value="2">
+                Linear Search
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q21" value="3">
+                DFS
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 22 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                22. What is the binary representation of decimal 5?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q22" value="0">
+                101
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q22" value="1">
+                110
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q22" value="2">
+                111
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q22" value="3">
+                100
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 23 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                23. Which memory is volatile?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q23" value="0">
+                ROM
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q23" value="1">
+                RAM
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q23" value="2">
+                Hard Disk
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q23" value="3">
+                SSD
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 24 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                24. Which operating system is open source?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q24" value="0">
+                Linux
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q24" value="1">
+                Windows
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q24" value="2">
+                iOS
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q24" value="3">
+                macOS
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 25 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                25. What is phishing?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q25" value="0">
+                A programming language
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q25" value="1">
+                A cyberattack that tricks users into revealing information
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q25" value="2">
+                A database technique
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q25" value="3">
+                A networking protocol
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 26 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                26. Which technology is used to make websites responsive?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q26" value="0">
+                CSS
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q26" value="1">
+                SQL
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q26" value="2">
+                BIOS
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q26" value="3">
+                FTP
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 27 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                27. Which SQL command removes records from a table?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q27" value="0">
+                REMOVE
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q27" value="1">
+                DELETE
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q27" value="2">
+                DROP DATA
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q27" value="3">
+                CLEAR
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 28 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                28. Which traversal uses a queue in a graph?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q28" value="0">
+                DFS
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q28" value="1">
+                BFS
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q28" value="2">
+                Binary Search
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q28" value="3">
+                Insertion Sort
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 29 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                29. What does URL stand for?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q29" value="0">
+                Uniform Resource Locator
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q29" value="1">
+                Universal Record Link
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q29" value="2">
+                Uniform Reference Link
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q29" value="3">
+                User Resource Location
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 30 -->
+
+        <div class="question-card">
+
+            <div class="question">
+                30. Which of the following is a programming language?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="q30" value="0">
+                Python
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q30" value="1">
+                HTML
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q30" value="2">
+                CSS
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q30" value="3">
+                HTTP
+            </label>
+
+        </div>
+
+
+
+        <!-- SUBMIT -->
+
+        <button type="submit" class="submit-btn">
+            SUBMIT ROUND 1
+        </button>
+
+    </form>
+
+</div>
+
+
+
+<script>
+
+    let time = 30 * 60;
+
+    const timer = document.getElementById("timer");
+
+    const form = document.getElementById("quizForm");
+
+
+    const countdown = setInterval(function () {
+
+        let minutes = Math.floor(time / 60);
+
+        let seconds = time % 60;
+
+
+        timer.textContent =
+            minutes + ":" +
+            seconds.toString().padStart(2, "0");
+
+
+        if (time <= 0) {
+
+            clearInterval(countdown);
+
+            alert("Time's up! Your quiz will be submitted.");
+
+            form.submit();
+
+        }
+
+
+        time--;
+
+    }, 1000);
+
+
+    form.addEventListener("submit", function () {
+
+        clearInterval(countdown);
+
+    });
+
+</script>
+
+
+</body>
+</html>

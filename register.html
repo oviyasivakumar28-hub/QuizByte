@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Byte | Registration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #eee7ff, #ffffff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .register-box {
+            width: 90%;
+            max-width: 550px;
+            background: white;
+            padding: 40px;
+            border-radius: 22px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+        }
+
+        .college {
+            text-align: center;
+            color: #6c4ab6;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #38235f;
+            margin: 5px 0;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 16px;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d6ccef;
+            border-radius: 9px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #6c4ab6;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #6c4ab6;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #50358e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="register-box">
+
+        <div class="college">
+            ACHARYA COLLEGE OF ENGINEERING TECHNOLOGY
+        </div>
+
+        <h1>QUIZ BYTE</h1>
+
+        <div class="subtitle">
+            Participant Registration
+        </div>
+
+        <form action="/round1" method="POST">
+
+            <label>Participant Name</label>
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+            <label>College Name</label>
+            <input
+                type="text"
+                name="college"
+                placeholder="Enter your college name"
+                required
+            >
+
+            <label>Department</label>
+            <input
+                type="text"
+                name="department"
+                placeholder="Enter your department"
+                required
+            >
+
+            <label>Email</label>
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label>Phone Number</label>
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Enter your phone number"
+                required
+            >
+
+            <button type="submit">
+                CONTINUE TO ROUND 1 →
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
